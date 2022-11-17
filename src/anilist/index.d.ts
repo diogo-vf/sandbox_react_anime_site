@@ -1,4 +1,5 @@
 import { type } from "@testing-library/user-event/dist/type";
+import { IMedia } from "../Components/SeriesForm";
 
 export interface IPageInfo {
     readonly total: number;
@@ -77,7 +78,7 @@ export interface IMediaResult {
     isLocked: boolean;
     treding: Number;
     favourites: number;
-    tags:IMediaTag[]
+    tags: IMediaTag[]
 
     //TODO
     relations: MediaConnection
@@ -119,22 +120,26 @@ export interface ICharacterImage {
     readonly large: string;
     readonly medium: string;
 }
-
-export interface MediaEdge {
+export interface IMediaConnection {
+    readonly edges: IMediaEdge[];
+    readonly nodes: IMedia[];
+    readonly: IPageInfo;
+}
+export interface IMediaEdge {
     //TODO
-    node: Media
-    id: Int
-    elationType(version: Int): MediaRelation
-    sMainStudio: Boolean!
-    haracters: [Character]
-    haracterRole: CharacterRole
-    haracterName: String
-    oleNotes: String
-    ubGroup: String
-    taffRole: String
-    oiceActors: [Staff]
-    oiceActorRoles: [StaffRoleType]
-    avouriteOrder: Int
+    node: IMedia;
+    id: number;
+    relationType: MediaRelation;
+    isMainStudio: boolean;
+    characters: [IC];
+    characterRole: CharacterRole;
+    characterName: String;
+    roleNotes: String;
+    dubGroup: String;
+    staffRole: String;
+    voiceActors: [Staff];
+    voiceActorRoles: [StaffRoleType];
+    favouriteOrder: number;
 }
 
 export type MediaType = 'ANIME' |
@@ -179,3 +184,17 @@ export type MediaSource = 'ORIGINAL' |
     'COMIC' |
     'MULTIMEDIA_PROJECT' |
     'PICTURE_BOOK';
+
+export type MediaRelation = "ADAPTATION" |
+    "PREQUEL" |
+    "SEQUEL" |
+    "PARENT" |
+    "SIDE_STORY" |
+    "CHARACTER" |
+    "SUMMARY" |
+    "ALTERNATIVE" |
+    "SPIN_OFF" |
+    "OTHER" |
+    "SOURCE" |
+    "COMPILATION" |
+    "CONTAINS";
