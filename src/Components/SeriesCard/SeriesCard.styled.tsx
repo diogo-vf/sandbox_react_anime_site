@@ -1,18 +1,12 @@
 import styled, {css, FlattenSimpleInterpolation} from "styled-components";
+import { IDivProps } from ".";
 
-interface SeriesCardProps {
-    width: number,
-    height: number,
-    color: string,
-    opened: boolean
-}
-
-const StyledCard = styled.div`
+export const StyledCard = styled.div`
   position: relative;
   margin: 4rem;
 `;
 
-const StyledCover = styled.img`
+export const StyledCover = styled.img`
   position: relative;
   object-fit: cover;
   object-position: center;
@@ -23,7 +17,7 @@ const StyledCover = styled.img`
 `
 
 // return the css for mouse hover or opened card
-const styleCardOpened = (value: boolean): FlattenSimpleInterpolation => {
+export const styleCardOpened = (value: boolean): FlattenSimpleInterpolation => {
     // css to show card opened
     let base = css`
       transform: rotate(-90deg) translate(-108%, 15%);
@@ -38,7 +32,7 @@ const styleCardOpened = (value: boolean): FlattenSimpleInterpolation => {
     return value ? base : hoverCss
 }
 
-const StyledBackground = styled.div<SeriesCardProps>`
+export const StyledBackground = styled.div<IDivProps>`
   position: absolute;
   background-color: ${props => props.color};
   height: ${(props) => props.width}px;
@@ -53,7 +47,7 @@ const StyledBackground = styled.div<SeriesCardProps>`
   ${(props) => styleCardOpened(props.opened)}
 `
 
-const StyledTitle = styled.div`
+export const StyledTitle = styled.div`
   position: absolute;
   bottom: 0;
   height: 30px;
@@ -69,5 +63,3 @@ const StyledTitle = styled.div`
   -webkit-box-orient: vertical;
   text-align: center;
 `
-
-export {StyledCard, StyledCover, StyledBackground, StyledTitle};

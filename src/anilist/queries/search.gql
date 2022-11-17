@@ -1,0 +1,117 @@
+query($search: String, $isAdult: Boolean) {
+    anime: Page(perPage: 8) {
+        pageInfo {
+            total
+            perPage
+            lastPage
+            currentPage
+            hasNextPage
+        }
+        results: media(type: ANIME, isAdult: $isAdult, search: $search) {
+            id
+            title {
+                userPreferred
+                english
+                native
+                romaji
+            }
+            coverImage {
+                medium
+                large
+                extraLarge
+                color
+            }
+            type
+            format
+            season
+            description
+            genres
+            bannerImage
+            isLicensed
+            startDate {
+                day
+                month
+                year
+            }
+        }
+    }
+    manga: Page(perPage: 8) {
+        pageInfo {
+            total
+        }
+        results: media(type: MANGA, isAdult: $isAdult, search: $search) {
+            id
+            title {
+                userPreferred
+                english
+                native
+                romaji
+            }
+            coverImage {
+                medium
+                large
+                extraLarge
+                color
+            }
+            type
+            format
+            season
+            description
+            genres
+            bannerImage
+            isLicensed
+            startDate {
+                day
+                month
+                year
+            }
+        }
+    }
+    characters: Page(perPage: 8) {
+        pageInfo {
+            total
+        }
+        results: characters(search: $search) {
+            id
+            name {
+                userPreferred
+            }
+            image {
+                medium
+            }
+        }
+    }
+    staff: Page(perPage: 8) {
+        pageInfo {
+            total
+        }
+        results: staff(search: $search) {
+            id
+            primaryOccupations
+            name {
+                userPreferred
+            }
+            image {
+                medium
+            }
+        }
+    }
+    studios: Page(perPage: 13) {
+        pageInfo {
+            total
+        }
+        results: studios(search: $search) {
+            id
+            name
+        }
+    }
+    users: Page(perPage: 8) {
+        results: users(search: $search) {
+            id
+            name
+            avatar {
+                medium
+            }
+        }
+    }
+}

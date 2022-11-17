@@ -1,16 +1,10 @@
 import {StyledCard, StyledCover, StyledBackground, StyledTitle} from "./SeriesCard.styled";
 import {Tooltip} from "@mui/material";
+import { ISeriesCardProps } from ".";
 
-interface seriesCardProps {
-    image_src: string;
-    title: string;
-    color: string;
-    width: number;
-    height: number;
-    opened?: boolean;
-}
 
-function SeriesCard({image_src, title, color, width, height, opened = false}: seriesCardProps) {
+
+function SeriesCard({image_src, title, color, width, height, opened = false}: ISeriesCardProps) {
     return (
         <StyledCard>
             <Tooltip title={title} placement="top" arrow followCursor enterDelay={600} enterNextDelay={300}>

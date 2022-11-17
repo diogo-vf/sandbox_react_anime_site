@@ -1,17 +1,9 @@
+import { ALAnime } from ".";
 import SeriesCard from "../SeriesCard/SeriesCard";
-
-import {
-    DivResultCard,
-    DivResultImage,
-    DivResultInfo,
-    DivResultsContainer,
-    DivResultTextContainer
-} from "./SeriesForm.styled";
-import {useTheme} from "@mui/material";
+import { SeriesSearchDropdown } from "../SeriesSeachDropdown/SeriesSearchDropdown";
 
 function SeriesForm() {
-
-    const theme = useTheme();
+    // TODO create hooks and simulate API calls
     const result: ALAnime = {
         "data": {
             "anime": {
@@ -226,59 +218,9 @@ function SeriesForm() {
                 height={300}
                 opened
             />
-
-            <DivResultsContainer theme={theme}>
-                {result.data.anime.results.map((item) => (
-                    <DivResultCard theme={theme}>
-                        <DivResultImage src={item.coverImage.medium} size={70}/>
-                        <DivResultTextContainer>
-                            {item.title.userPreferred}
-                            <DivResultInfo>
-                                <span>{item.startDate.year} </span>
-                                <span>{item.format}</span>
-                            </DivResultInfo>
-                        </DivResultTextContainer>
-                    </DivResultCard>
-                ))}
-            </DivResultsContainer>
+            <SeriesSearchDropdown/>
         </>
     );
-}
-
-interface ALAnime {
-    data: {
-        anime: {
-            pageInfo: {
-                total: number;
-            },
-            results:
-                {
-                    id: number,
-                    title: {
-                        userPreferred: null | string,
-                        english: null | string,
-                        native: null | string,
-                        romaji: null | string,
-                    },
-                    coverImage: {
-                        medium: null | string,
-                        large: null | string,
-                        extraLarge: null | string,
-                        color: null | string,
-                    },
-                    type: null | string,
-                    format: null | string,
-                    bannerImage: null | string,
-                    isLicensed: boolean,
-                    startDate: {
-                        day: null | number,
-                        month: null | number,
-                        year: null | number,
-                    }
-                }[]
-        }
-    }
-
 }
 
 export default SeriesForm;
