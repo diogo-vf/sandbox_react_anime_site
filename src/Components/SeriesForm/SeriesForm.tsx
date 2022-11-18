@@ -1,10 +1,11 @@
-import { ALAnime } from ".";
+
+import { ISearchMedia } from "../../anilist/queries/index.search";
 import SeriesCard from "../SeriesCard/SeriesCard";
 import { SeriesSearchDropdown } from "../SeriesSeachDropdown/SeriesSearchDropdown";
 
 function SeriesForm() {
     // TODO create hooks and simulate API calls
-    const result: ALAnime = {
+    const result: ISearchMedia = {
         "data": {
             "anime": {
                 "pageInfo": {

@@ -38,6 +38,10 @@ query($search: String, $isAdult: Boolean) {
     manga: Page(perPage: 8) {
         pageInfo {
             total
+            perPage
+            lastPage
+            currentPage
+            hasNextPage
         }
         results: media(type: MANGA, isAdult: $isAdult, search: $search) {
             id
@@ -70,6 +74,10 @@ query($search: String, $isAdult: Boolean) {
     characters: Page(perPage: 8) {
         pageInfo {
             total
+            perPage
+            lastPage
+            currentPage
+            hasNextPage
         }
         results: characters(search: $search) {
             id
@@ -84,6 +92,10 @@ query($search: String, $isAdult: Boolean) {
     staff: Page(perPage: 8) {
         pageInfo {
             total
+            perPage
+            lastPage
+            currentPage
+            hasNextPage
         }
         results: staff(search: $search) {
             id
@@ -99,6 +111,10 @@ query($search: String, $isAdult: Boolean) {
     studios: Page(perPage: 13) {
         pageInfo {
             total
+            perPage
+            lastPage
+            currentPage
+            hasNextPage
         }
         results: studios(search: $search) {
             id
@@ -106,6 +122,13 @@ query($search: String, $isAdult: Boolean) {
         }
     }
     users: Page(perPage: 8) {
+        pageInfo {
+            total
+            perPage
+            lastPage
+            currentPage
+            hasNextPage
+        }
         results: users(search: $search) {
             id
             name
