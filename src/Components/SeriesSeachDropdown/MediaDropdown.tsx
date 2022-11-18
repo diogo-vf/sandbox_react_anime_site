@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material";
 import { ISearchMedia } from "../../anilist/queries/index.search";
 import { IMedia } from "../../anilist";
 
-export function SeriesSearchDropdown({ animes }: { animes: ISearchMedia }) {
+export function MediaDropdown({ animes }: { animes: ISearchMedia }) {
 
     const theme = useTheme();
     

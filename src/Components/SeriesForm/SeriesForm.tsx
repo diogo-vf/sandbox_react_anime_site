@@ -1,7 +1,7 @@
 
 import { ISearchMedia } from "../../anilist/queries/index.search";
 import SeriesCard from "../SeriesCard/SeriesCard";
-import { SeriesSearchDropdown } from "../SeriesSeachDropdown/SeriesSearchDropdown";
+import { MediaDropdown } from "../SeriesSeachDropdown/MediaDropdown";
 
 function SeriesForm() {
     // TODO create hooks and simulate API calls
@@ -219,7 +219,7 @@ function SeriesForm() {
                 height={300}
                 opened
             />
-            <SeriesSearchDropdown animes={result}/>
+            <MediaDropdown animes={result}/>
         </>
     );
 }
