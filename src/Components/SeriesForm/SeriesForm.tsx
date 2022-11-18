@@ -219,7 +219,7 @@ function SeriesForm() {
                 height={300}
                 opened
             />
-            <SeriesSearchDropdown/>
+            <SeriesSearchDropdown animes={result}/>
         </>
     );
 }

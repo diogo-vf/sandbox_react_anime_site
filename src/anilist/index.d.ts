@@ -1,44 +1,44 @@
 export interface IMedia {
-    readonly id?: null | Number;
-    readonly idMal?: null | Number;
+    readonly id?: null | number;
+    readonly idMal?: null | number;
     readonly title?: null | IMediaTitle;
     readonly type?: null | MediaType;
     readonly format?: null | MediaFormat;
     readonly status?: null | MediaStatus;
-    readonly description?: null | String;
+    readonly description?: null | string;
     readonly startDate?: null | IFuzzyDateInt;
     readonly endDate?: null | IFuzzyDateInt;
     readonly season?: null | MediaSeason;
-    readonly seasonYear?: null | Number;
-    readonly seasonInt?: null | Number;
-    readonly episodes?: null | Number;
-    readonly duration?: null | Number;
-    readonly chapters?: null | Number;
-    readonly volumes?: null | Number;
+    readonly seasonYear?: null | number;
+    readonly seasonInt?: null | number;
+    readonly episodes?: null | number;
+    readonly duration?: null | number;
+    readonly chapters?: null | number;
+    readonly volumes?: null | number;
     readonly countryOfOrigin?: null | CountryCode;
-    readonly isLicensed?: null | Boolean;
+    readonly isLicensed?: null | boolean;
     readonly source?: null | MediaSource;
-    readonly hashtag?: null | String;
+    readonly hashtag?: null | string;
     readonly trailer?: null | IMediaTrailer;
-    readonly updatedAt?: null | Number;
+    readonly updatedAt?: null | number;
     readonly coverImage?: null | ICoverImage;
-    readonly bannerImage?: null | String;
-    readonly genres?: null | String[];
-    readonly synonyms?: null | String[];
-    readonly averageScore?: null | Number;
-    readonly meanScore?: null | Number;
-    readonly popularity?: null | Number;
-    readonly isLocked?: null | Boolean;
-    readonly trending?: null | Number;
-    readonly favourites?: null | Number;
+    readonly bannerImage?: null | string;
+    readonly genres?: null | string[];
+    readonly synonyms?: null | string[];
+    readonly averageScore?: null | number;
+    readonly meanScore?: null | number;
+    readonly popularity?: null | number;
+    readonly isLocked?: null | boolean;
+    readonly trending?: null | number;
+    readonly favourites?: null | number;
     readonly tags?: null | IMediaTag[];
     readonly relations?: null | IMediaConnection;
     readonly characters?: null | ICharacterConnection;
     readonly staff?: null | IStaffConnection;
     readonly studios?: null | IStudioConnection;
-    readonly isFavourite?: null | Boolean;
-    readonly isFavouriteBlocked?: null | Boolean;
-    readonly isAdult?: null | Boolean;
+    readonly isFavourite?: null | boolean;
+    readonly isFavouriteBlocked?: null | boolean;
+    readonly isAdult?: null | boolean;
     readonly nextAiringEpisode?: null | IAiringSchedule;
     readonly airingSchedule?: null | IAiringScheduleConnection;
     readonly trends?: null | IMediaTrendConnection;
@@ -49,11 +49,11 @@ export interface IMedia {
     readonly reviews?: null | IReviewConnection;
     readonly recommendations?: null | IRecommendationConnection;
     readonly stats?: null | IMediaStats;
-    readonly siteUrl?: null | String;
-    readonly autoCreateForumThread?: null | Boolean;
-    readonly isRecommendationBlocked?: null | Boolean;
-    readonly isReviewBlocked?: null | Boolean;
-    readonly modNotes?: null | String;
+    readonly siteUrl?: null | string;
+    readonly autoCreateForumThread?: null | boolean;
+    readonly isRecommendationBlocked?: null | boolean;
+    readonly isReviewBlocked?: null | boolean;
+    readonly modNotes?: null | string;
 }
 
 export interface IMediaTitle {
@@ -64,39 +64,39 @@ export interface IMediaTitle {
 }
 
 export interface IMediaTrailer {
-    readonly id?: null | Number;
+    readonly id?: null | number;
     readonly site?: null | string;
     readonly thumbnail?: null | string;
 }
 
 export interface IMediaTag {
-    readonly id?: null | Number;
-    readonly name?: null | String;
-    readonly description?: null | String;
-    readonly category?: null | String;
-    readonly rank?: null | Number;
-    readonly isGeneralSpoiler?: null | Boolean;
-    readonly isMediaSpoiler?: null | Boolean;
-    readonly isAdult?: null | Boolean;
-    readonly userId?: null | Number;
+    readonly id?: null | number;
+    readonly name?: null | string;
+    readonly description?: null | string;
+    readonly category?: null | string;
+    readonly rank?: null | number;
+    readonly isGeneralSpoiler?: null | boolean;
+    readonly isMediaSpoiler?: null | boolean;
+    readonly isAdult?: null | boolean;
+    readonly userId?: null | number;
 }
 
 export interface IMediaListTypeOptions {
-    readonly sectionOrder?: null | String[];
-    readonly splitCompletedSectionByFormat?: null | Boolean;
-    readonly customLists?: null | String[];
-    readonly advancedScoring?: null | String[];
-    readonly advancedScoringEnabled?: null | Boolean;
+    readonly sectionOrder?: null | string[];
+    readonly splitCompletedSectionByFormat?: null | boolean;
+    readonly customLists?: null | string[];
+    readonly advancedScoring?: null | string[];
+    readonly advancedScoringEnabled?: null | boolean;
 }
 
 export interface IMediaTrend {
-    readonly mediaId?: null | Number;
-    readonly date?: null | Number;
-    readonly trending?: null | Number;
-    readonly averageScore?: null | Number;
-    readonly inProgress?: null | Number;
-    readonly releasing?: null | Boolean;
-    readonly episode?: null | Number;
+    readonly mediaId?: null | number;
+    readonly date?: null | number;
+    readonly trending?: null | number;
+    readonly averageScore?: null | number;
+    readonly inProgress?: null | number;
+    readonly releasing?: null | boolean;
+    readonly episode?: null | number;
     readonly media?: null | IMedia;
 }
 
@@ -111,55 +111,55 @@ export interface IMediaTrendConnection {
 }
 
 export interface IMediaExternalLink {
-    readonly id?: null | Number;
-    readonly url?: null | String;
-    readonly site?: null | String;
-    readonly siteId?: null | Number;
+    readonly id?: null | number;
+    readonly url?: null | string;
+    readonly site?: null | string;
+    readonly siteId?: null | number;
     readonly type?: null | ExternalLinkType;
-    readonly language?: null | String;
-    readonly color?: null | String;
-    readonly icon?: null | String;
-    readonly notes?: null | String;
-    readonly isDisabled?: null | Boolean;
+    readonly language?: null | string;
+    readonly color?: null | string;
+    readonly icon?: null | string;
+    readonly notes?: null | string;
+    readonly isDisabled?: null | boolean;
 }
 
 export interface IMediaRank {
-    readonly id?: null | Number;
-    readonly rank?: null | Number;
+    readonly id?: null | number;
+    readonly rank?: null | number;
     readonly type?: null | MediaRankType;
     readonly format?: null | MediaFormat;
-    readonly year?: null | Number;
+    readonly year?: null | number;
     readonly season?: null | MediaSeason;
-    readonly allTime?: null | Boolean;
-    readonly context?: null | String;
+    readonly allTime?: null | boolean;
+    readonly context?: null | string;
 }
 
 export interface IMediaStreamingEpisode {
-    readonly title?: null | String;
-    readonly thumbnail?: null | String;
-    readonly url?: null | String;
-    readonly site?: null | String;
+    readonly title?: null | string;
+    readonly thumbnail?: null | string;
+    readonly url?: null | string;
+    readonly site?: null | string;
 }
 
 export interface IMediaList {
-    readonly id?: null | Number;
-    readonly userId?: null | Number;
-    readonly mediaId?: null | Number;
+    readonly id?: null | number;
+    readonly userId?: null | number;
+    readonly mediaId?: null | number;
     readonly status?: null | MediaListStatus;
-    readonly score?: null | Number;
-    readonly progress?: null | Number;
-    readonly progressVolumes?: null | Number;
-    readonly repeat?: null | Number;
-    readonly priority?: null | Number;
-    readonly private?: null | Boolean;
-    readonly notes?: null | String;
-    readonly hiddenFromStatusLists?: null | Boolean;
+    readonly score?: null | number;
+    readonly progress?: null | number;
+    readonly progressVolumes?: null | number;
+    readonly repeat?: null | number;
+    readonly priority?: null | number;
+    readonly private?: null | boolean;
+    readonly notes?: null | string;
+    readonly hiddenFromStatusLists?: null | boolean;
     readonly customLists?: null | JSONValue;
     readonly advancedScores?: null | JSONValue;
     readonly startedAt?: null | IFuzzyDateInt;
     readonly completedAt?: null | IFuzzyDateInt;
-    readonly updatedAt?: null | Number;
-    readonly createdAt?: null | Number;
+    readonly updatedAt?: null | number;
+    readonly createdAt?: null | number;
     readonly media?: null | IMedia;
     readonly user?: null | IUser;
 }
@@ -177,34 +177,34 @@ export interface IMediaConnection {
 
 export interface IMediaEdge {
     readonly node?: null | IMedia;
-    readonly id?: null | Number;
+    readonly id?: null | number;
     readonly relationType?: null | MediaRelation;
     readonly isMainStudio?: null | boolean;
     readonly characters?: null | ICharacter[];
     readonly characterRole?: null | CharacterRole;
-    readonly characterName?: null | String;
-    readonly roleNotes?: null | String;
-    readonly dubGroup?: null | String;
-    readonly staffRole?: null | String;
+    readonly characterName?: null | string;
+    readonly roleNotes?: null | string;
+    readonly dubGroup?: null | string;
+    readonly staffRole?: null | string;
     readonly voiceActors?: null | IStaff[];
     readonly voiceActorRoles?: null | IStaffRoleType[];
-    readonly favouriteOrder?: null | Number;
+    readonly favouriteOrder?: null | number;
 }
 export interface ICharacter {
-    readonly id?: null | Number;
+    readonly id?: null | number;
     readonly name?: null | ICharacterName;
     readonly image?: null | ICharacterImage;
-    readonly description?: null | String;
-    readonly gender?: null | String;
-    readonly dateOfBirth?: null | IFuzzyDateNumber
-    readonly age?: null | String;
-    readonly bloodType?: null | String;
-    readonly isFavourite?: null | Boolean;
-    readonly isFavouriteBlocked?: null | Boolean;
-    readonly siteUrl?: null | String;
+    readonly description?: null | string;
+    readonly gender?: null | string;
+    readonly dateOfBirth?: null | IFuzzyDatenumber
+    readonly age?: null | string;
+    readonly bloodType?: null | string;
+    readonly isFavourite?: null | boolean;
+    readonly isFavouriteBlocked?: null | boolean;
+    readonly siteUrl?: null | string;
     readonly media?: null | IMediaConnection;
-    readonly favourites?: null | Number;
-    readonly modNotes?: null | String;
+    readonly favourites?: null | number;
+    readonly modNotes?: null | string;
 }
 
 export interface ICharacterName {
@@ -220,13 +220,13 @@ export interface ICharacterName {
 
 export interface ICharacterEdge {
     readonly node?: null | ICharacter;
-    readonly id?: null | Number;
+    readonly id?: null | number;
     readonly role?: null | CharacterRole;
-    readonly name?: null | String;
+    readonly name?: null | string;
     readonly voiceActors?: null | IStaff[];
     readonly voiceActorRoles?: null | IStaffRoleType[];
     readonly media?: null | IMedia[];
-    readonly favouriteOrder?: null | Number;
+    readonly favouriteOrder?: null | number;
 }
 
 export interface ICharacterConnection {
@@ -236,20 +236,20 @@ export interface ICharacterConnection {
 }
 
 export interface IStudio {
-    readonly id?: null | Number;
-    readonly name?: null | String;
-    readonly isAnimationStudio?: null | Boolean;
+    readonly id?: null | number;
+    readonly name?: null | string;
+    readonly isAnimationStudio?: null | boolean;
     readonly media?: null | IMediaConnection;
-    readonly siteUrl?: null | String;
-    readonly isFavourite?: null | Boolean;
-    readonly favourites?: null | Number;
+    readonly siteUrl?: null | string;
+    readonly isFavourite?: null | boolean;
+    readonly favourites?: null | number;
 }
 
 export interface IStudioEdge {
     readonly node?: null | IStudio;
-    readonly id?: null | Number;
-    readonly isMain?: null | Boolean;
-    readonly favouriteOrder?: null | Number;
+    readonly id?: null | number;
+    readonly isMain?: null | boolean;
+    readonly favouriteOrder?: null | number;
 }
 
 export interface IStudioConnection {
@@ -259,98 +259,98 @@ export interface IStudioConnection {
 }
 
 export interface IUser {
-    readonly id?: null | Number;
-    readonly name?: null | String;
-    readonly about?: null | String;
+    readonly id?: null | number;
+    readonly name?: null | string;
+    readonly about?: null | string;
     readonly avatar?: null | IUserAvatar;
-    readonly bannerImage?: null | String;
-    readonly isFollowing?: null | Boolean;
-    readonly isFollower?: null | Boolean;
-    readonly isBlocked?: null | Boolean;
+    readonly bannerImage?: null | string;
+    readonly isFollowing?: null | boolean;
+    readonly isFollower?: null | boolean;
+    readonly isBlocked?: null | boolean;
     readonly bans?: null | JSONValue;
     readonly options?: null | IUserOptions;
     readonly mediaListOptions?: null | IMediaListOptions;
     readonly favourites?: null | IFavourites;
     readonly statistics?: null | IUserStatisticTypes;
-    readonly unreadNotificationCount?: null | Number;
-    readonly siteUrl?: null | String;
-    readonly donatorTier?: null | Number;
-    readonly donatorBadge?: null | String;
+    readonly unreadNotificationCount?: null | number;
+    readonly siteUrl?: null | string;
+    readonly donatorTier?: null | number;
+    readonly donatorBadge?: null | string;
     readonly moderatorRoles?: null | ModRole[];
-    readonly createdAt?: null | Number;
-    readonly updatedAt?: null | Number;
+    readonly createdAt?: null | number;
+    readonly updatedAt?: null | number;
     readonly previousNames?: null | IUserPreviousName[];
 }
 
 export interface IUserPreviousName {
-    readonly name?: null | String;
-    readonly createdAt?: null | Number;
-    readonly updatedAt?: null | Number;
+    readonly name?: null | string;
+    readonly createdAt?: null | number;
+    readonly updatedAt?: null | number;
 }
 
 export interface IUserOptions {
     readonly titleLanguage?: null | UserTitleLanguage;
-    readonly displayAdultContent?: null | Boolean;
-    readonly airingNotifications?: null | Boolean;
-    readonly profileColor?: null | String;
+    readonly displayAdultContent?: null | boolean;
+    readonly airingNotifications?: null | boolean;
+    readonly profileColor?: null | string;
     readonly notificationOptions?: null | INotificationOption[];
-    readonly timezone?: null | String;
-    readonly activityMergeTime?: null | Number;
+    readonly timezone?: null | string;
+    readonly activityMergeTime?: null | number;
     readonly staffNameLanguage?: null | UserStaffNameLanguage;
-    readonly restrictMessagesToFollowing?: null | Boolean;
+    readonly restrictMessagesToFollowing?: null | boolean;
     readonly disabledListActivity?: null | IListActivityOption[];
 }
 
 export interface IUserOptions {
     readonly scoreFormat?: null | ScoreFormat;
-    readonly rowOrder?: null | String;
+    readonly rowOrder?: null | string;
     readonly animeList?: null | IMediaListTypeOptions;
     readonly mangaList?: null | IMediaListTypeOptions;
 }
 
 export interface IStaff {
-    readonly id?: null | Number;
+    readonly id?: null | number;
     readonly name?: null | IStaffName;
-    readonly languageV2?: null | String;
+    readonly languageV2?: null | string;
     readonly image?: null | IStaffImage;
-    readonly description?: null | String;
-    readonly primaryOccupations?: null | String[];
-    readonly gender?: null | String;
-    readonly dateOfBirth?: null | IFuzzyDateNumber;
-    readonly dateOfDeath?: null | IFuzzyDateNumber;
-    readonly age?: null | Number;
-    readonly yearsActive?: null | Number[];
-    readonly homeTown?: null | String;
-    readonly bloodType?: null | String;
-    readonly isFavourite?: null | Boolean;
-    readonly isFavouriteBlocked?: null | Boolean;
-    readonly siteUrl?: null | String;
+    readonly description?: null | string;
+    readonly primaryOccupations?: null | string[];
+    readonly gender?: null | string;
+    readonly dateOfBirth?: null | IFuzzyDatenumber;
+    readonly dateOfDeath?: null | IFuzzyDatenumber;
+    readonly age?: null | number;
+    readonly yearsActive?: null | number[];
+    readonly homeTown?: null | string;
+    readonly bloodType?: null | string;
+    readonly isFavourite?: null | boolean;
+    readonly isFavouriteBlocked?: null | boolean;
+    readonly siteUrl?: null | string;
     readonly staffMedia?: null | IMediaConnection;
     readonly characters?: null | ICharacterConnection;
     readonly characterMedia?: null | IMediaConnection;
     readonly staff?: null | IStaff;
     readonly submitter?: null | IUser;
-    readonly submissionStatus?: null | Number;
-    readonly submissionNotes?: null | String;
-    readonly favourites?: null | Number;
-    readonly modNotes?: null | String;
+    readonly submissionStatus?: null | number;
+    readonly submissionNotes?: null | string;
+    readonly favourites?: null | number;
+    readonly modNotes?: null | string;
 }
 
 export interface IStaffName {
-    readonly first?: null | String;
-    readonly middle?: null | String;
-    readonly last?: null | String;
-    readonly full?: null | String;
-    readonly native?: null | String;
-    readonly alternative?: null | String[];
-    readonly userPreferred?: null | String;
+    readonly first?: null | string;
+    readonly middle?: null | string;
+    readonly last?: null | string;
+    readonly full?: null | string;
+    readonly native?: null | string;
+    readonly alternative?: null | string[];
+    readonly userPreferred?: null | string;
 }
 
 export interface IStaffEdge {
     readonly node?: null | IStaff;
-    readonly id?: null | Number;
-    readonly role?: null | String;
-    readonly favouriteOrder?: null | Number;
+    readonly id?: null | number;
+    readonly role?: null | string;
+    readonly favouriteOrder?: null | number;
 }
 
 export interface IStaffConnection {
@@ -361,25 +361,25 @@ export interface IStaffConnection {
 
 export interface IStaffRoleType {
     readonly voiceActor?: null | IStaff;
-    readonly roleNotes?: null | String;
-    readonly dubGroup?: null | String;
+    readonly roleNotes?: null | string;
+    readonly dubGroup?: null | string;
 }
 
 export interface IReview {
-    readonly id?: null | Number;
-    readonly userId?: null | Number;
-    readonly mediaId?: null | Number;
+    readonly id?: null | number;
+    readonly userId?: null | number;
+    readonly mediaId?: null | number;
     readonly mediaType?: null | MediaType;
-    readonly summary?: null | String;
-    readonly body?: null | String;
-    readonly rating?: null | Number;
-    readonly ratingAmount?: null | Number;
+    readonly summary?: null | string;
+    readonly body?: null | string;
+    readonly rating?: null | number;
+    readonly ratingAmount?: null | number;
     readonly userRating?: null | ReviewRating;
-    readonly score?: null | Number;
-    readonly private?: null | Boolean;
-    readonly siteUrl?: null | String;
-    readonly createdAt?: null | Number;
-    readonly updatedAt?: null | Number;
+    readonly score?: null | number;
+    readonly private?: null | boolean;
+    readonly siteUrl?: null | string;
+    readonly createdAt?: null | number;
+    readonly updatedAt?: null | number;
     readonly user?: null | IUser;
     readonly media?: null | IMedia;
 }
@@ -395,8 +395,8 @@ export interface IReviewConnection {
 }
 
 export interface IRecommendation {
-    readonly id?: null | Number;
-    readonly rating?: null | Number;
+    readonly id?: null | number;
+    readonly rating?: null | number;
     readonly userRating?: null | RecommendationRating;
     readonly media?: null | MediaConfiguration;
     readonly mediaRecommendation?: null | IMedia;
@@ -414,13 +414,13 @@ export interface IRecommendationConnection {
 }
 
 export interface IUserStatistics {
-    readonly count?: null | Number;
-    readonly meanScore?: null | Number;
-    readonly standardDeviation?: null | Number;
-    readonly minutesWatched?: null | Number;
-    readonly episodesWatched?: null | Number;
-    readonly chaptersRead?: null | Number;
-    readonly volumesRead?: null | Number;
+    readonly count?: null | number;
+    readonly meanScore?: null | number;
+    readonly standardDeviation?: null | number;
+    readonly minutesWatched?: null | number;
+    readonly episodesWatched?: null | number;
+    readonly chaptersRead?: null | number;
+    readonly volumesRead?: null | number;
     readonly formats?: null | IUserFormatStatistic[];
     readonly statuses?: null | IUserStatusStatistic[];
     readonly scores?: null | IUserScoreStatistic[];
@@ -436,11 +436,11 @@ export interface IUserStatistics {
 }
 
 export interface IStatistic {
-    readonly count?: null | Number;
-    readonly meanScore?: null | Number;
-    readonly minutesWatched?: null | Number;
-    readonly chaptersRead?: null | Number;
-    readonly mediaIds?: null | Number[];
+    readonly count?: null | number;
+    readonly meanScore?: null | number;
+    readonly minutesWatched?: null | number;
+    readonly chaptersRead?: null | number;
+    readonly mediaIds?: null | number[];
 }
 
 export interface IUserFormatStatistic extends IStatistic {
@@ -452,19 +452,19 @@ export interface IUserStatusStatistic extends IStatistic {
 }
 
 export interface IUserScoreStatistic extends IStatistic {
-    readonly score?: null | Number;
+    readonly score?: null | number;
 }
 
 export interface IUserLengthStatistic extends IStatistic {
-    readonly length?: null | String;
+    readonly length?: null | string;
 }
 
 export interface IUserReleaseYearStatistic extends IStatistic {
-    readonly releaseYear?: null | Number;
+    readonly releaseYear?: null | number;
 }
 
 export interface IUserStartYearStatistic extends IStatistic {
-    readonly startYear?: null | Number;
+    readonly startYear?: null | number;
 }
 
 export interface IUserGenreStatistic extends IStatistic {
@@ -481,7 +481,7 @@ export interface IUserCountryStatistic extends IStatistic {
 
 export interface IUserVoiceActorStatistic extends IStatistic {
     readonly voiceActor?: null | IStaff;
-    readonly characterIds?: null | Number[];
+    readonly characterIds?: null | number[];
 }
 
 export interface IUserStaffStatistic extends IStatistic {
@@ -498,16 +498,16 @@ export interface IUserStatisticTypes {
 }
 
 export interface IPageInfo {
-    readonly total?: null | Number;
-    readonly perPage?: null | Number;
-    readonly lastPage?: null | Number;
-    readonly currentPage?: null | Number;
+    readonly total?: null | number;
+    readonly perPage?: null | number;
+    readonly lastPage?: null | number;
+    readonly currentPage?: null | number;
     readonly hasNextPage?: null | boolean;
 }
 
 export interface IImage {
-    readonly large?: null | String;
-    readonly medium?: null | String;
+    readonly large?: null | string;
+    readonly medium?: null | string;
 }
 
 export interface ICoverImage extends IImage {
@@ -522,17 +522,17 @@ export interface IStaffImage extends IImage { }
 export interface IUserAvatar extends IImage { }
 
 export interface IAiringSchedule {
-    readonly id?: null | Number;
-    readonly airingAt?: null | Number;
-    readonly timeUntilAiring?: null | Number;
-    readonly episode?: null | Number;
-    readonly mediaId?: null | Number;
+    readonly id?: null | number;
+    readonly airingAt?: null | number;
+    readonly timeUntilAiring?: null | number;
+    readonly episode?: null | number;
+    readonly mediaId?: null | number;
     readonly media?: null | IMedia;
 }
 
 export interface IAiringScheduleEdge {
     readonly node?: null | IAiringSchedule;
-    readonly id?: null | Number;
+    readonly id?: null | number;
 }
 
 export interface IAiringScheduleConnection {
@@ -542,18 +542,18 @@ export interface IAiringScheduleConnection {
 }
 
 export interface IFuzzyDateInt {
-    readonly day?: null | Number;
-    readonly year?: null | Number;
-    readonly month?: null | Number;
+    readonly day?: null | number;
+    readonly year?: null | number;
+    readonly month?: null | number;
 }
 
 export interface INotificationOption {
     readonly type?: null | NotificationType;
-    readonly enabled?: null | Boolean;
+    readonly enabled?: null | boolean;
 }
 
 export interface IListActivityOption {
-    readonly disabled?: null | Boolean;
+    readonly disabled?: null | boolean;
     readonly type?: null | MediaListStatus;
 }
 
@@ -566,13 +566,13 @@ export interface IFavourites {
 }
 
 export interface IScoreDistribution {
-    readonly score?: null | Number;
-    readonly amount?: null | Number;
+    readonly score?: null | number;
+    readonly amount?: null | number;
 }
 
 export interface IStatusDistribution {
     readonly status?: null | MediaListStatus;
-    readonly amount?: null | Number;
+    readonly amount?: null | number;
 }
 
 export interface JSONArray extends Array<JSONValue> { }
@@ -582,7 +582,7 @@ export interface JSONObject {
 }
 
 export type JSONValue = string
-    | Number
+    | number
     | boolean
     | JSONObject
     | JSONArray;
