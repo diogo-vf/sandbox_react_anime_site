@@ -1,5 +1,7 @@
-query($search: String, $isAdult: Boolean) {
-    anime: Page(perPage: 8) {
+import { gql } from "graphql-request";
+
+export const QUERY_MEADIA_SEARCH = gql`query($search: String!, $perPage: Int = 8, $isAdult: Boolean) {
+    anime: Page(perPage: $perPage) {
         pageInfo {
             total
             perPage
@@ -35,7 +37,7 @@ query($search: String, $isAdult: Boolean) {
             }
         }
     }
-    manga: Page(perPage: 8) {
+    manga: Page(perPage: $perPage) {
         pageInfo {
             total
             perPage
@@ -71,70 +73,5 @@ query($search: String, $isAdult: Boolean) {
             }
         }
     }
-    characters: Page(perPage: 8) {
-        pageInfo {
-            total
-            perPage
-            lastPage
-            currentPage
-            hasNextPage
-        }
-        results: characters(search: $search) {
-            id
-            name {
-                userPreferred
-            }
-            image {
-                medium
-            }
-        }
-    }
-    staff: Page(perPage: 8) {
-        pageInfo {
-            total
-            perPage
-            lastPage
-            currentPage
-            hasNextPage
-        }
-        results: staff(search: $search) {
-            id
-            primaryOccupations
-            name {
-                userPreferred
-            }
-            image {
-                medium
-            }
-        }
-    }
-    studios: Page(perPage: 13) {
-        pageInfo {
-            total
-            perPage
-            lastPage
-            currentPage
-            hasNextPage
-        }
-        results: studios(search: $search) {
-            id
-            name
-        }
-    }
-    users: Page(perPage: 8) {
-        pageInfo {
-            total
-            perPage
-            lastPage
-            currentPage
-            hasNextPage
-        }
-        results: users(search: $search) {
-            id
-            name
-            avatar {
-                medium
-            }
-        }
-    }
 }
+`

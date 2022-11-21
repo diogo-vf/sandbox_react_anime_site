@@ -1,8 +1,10 @@
 import { IMedia } from "../../anilist";
-import { ISearchMedia } from "../../anilist/queries/index.search";
+import { IMediaSearch } from "../../anilist/queries/index.MediaSearch";
 
 export interface IMediaDropdownProps {
-    animes?: ISearchMedia;
+    mediaSearch?: IMediaSearch;
+    showAnimes?: boolean;
+    showMangas?: boolean;
     onClick?: (media: IMedia) => void;
 }
 export interface IMediaCardProps {

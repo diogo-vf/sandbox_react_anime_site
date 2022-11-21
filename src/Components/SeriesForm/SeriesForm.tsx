@@ -1,19 +1,32 @@
 
 import SeriesCard from "../SeriesCard/SeriesCard";
 import { MediaSearchDropdown } from "../MediaSeachDropdown/MediaSearchDropdown";
+import { useState } from "react";
+import { IMedia } from "../../anilist";
+import { translate } from "../../anilist/translation/translation";
 
 function SeriesForm() {
+    const [media, setMedia] = useState<IMedia>({})
+    const [description, setDescription] = useState<string>("")
+
+    const handleClick = async (value: IMedia) => {
+        console.log(value)
+        // if(value.description)
+        //     console.log( await translate({text: value.description, to: "fe", from: "en"}))
+        setMedia(value)
+    }
     return (
         <>
             <SeriesCard
-                image_src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116674-p3zK4PUX2Aag.jpg"
-                title="BLEACH: Sennen Kessen-hen"
-                color="#e45043"
+                image_src={media.coverImage?.extraLarge || media.coverImage?.large || "/logo512.png"}
+                title={media.title?.romaji || media.title?.english || "Example"}
+                color={media.coverImage?.color || "BLACK" }
                 width={200}
                 height={300}
                 opened
             />
-            <MediaSearchDropdown label="Search Anime"/>
+            <div>{description}</div>
+            <MediaSearchDropdown label="Search Anime" onClick={handleClick}/>
         </>
     );
 }

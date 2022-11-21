@@ -3,8 +3,8 @@ import { DivResultsContainer, DivResultCard, DivResultImage, DivResultTextContai
 import { useTheme } from "@mui/material";
 import { IMediaCardProps, IMediaDropdownProps } from "./index.mediaDropdown";
 
-export function MediaDropdown({ animes, onClick }: IMediaDropdownProps) {
-
+export function MediaDropdown({ mediaSearch, showAnimes = false, showMangas = false, onClick }: IMediaDropdownProps) {
+    console.log({showAnimes, showMangas})
     const theme = useTheme();
 
     function CreateCardsByMedia({ media, onClick }: IMediaCardProps) {
@@ -24,8 +24,11 @@ export function MediaDropdown({ animes, onClick }: IMediaDropdownProps) {
 
     return (
         <DivResultsContainer theme={theme}>
-            {animes?.data?.anime?.results.map((anime) => (
-                <CreateCardsByMedia onClick={onClick} media={anime} key={anime.id || anime.idMal} />
+            {showAnimes && mediaSearch?.anime.results.map((media) => (
+                <CreateCardsByMedia onClick={onClick} media={media} key={media.id || media.idMal} />
+            ))}
+            {showMangas && mediaSearch?.manga.results.map((media) => (
+                <CreateCardsByMedia onClick={onClick} media={media} key={media.id || media.idMal} />
             ))}
         </DivResultsContainer>
     )

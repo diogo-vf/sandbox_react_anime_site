@@ -575,6 +575,11 @@ export interface IStatusDistribution {
     readonly amount?: null | number;
 }
 
+export interface IMediaPage{
+    pageInfo: IPageInfo;
+    results: IMedia[];
+}
+
 export interface JSONArray extends Array<JSONValue> { }
 
 export interface JSONObject {
