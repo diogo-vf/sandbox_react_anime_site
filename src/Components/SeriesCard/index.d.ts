@@ -1,13 +1,13 @@
 
 interface IProps {
-    width: number,
-    height: number,
-    color: string,
-    opened?: boolean = false
+    width: number;
+    height: number;
+    color: string;
+    opened?: boolean;
 }
 
 export interface IDivProps extends IProps{
-    opened: boolean = false
+    opened: boolean;
 }
 
 export interface ISeriesCardProps extends IProps {

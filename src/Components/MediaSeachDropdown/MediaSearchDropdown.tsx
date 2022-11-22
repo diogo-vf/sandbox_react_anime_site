@@ -17,7 +17,7 @@ export function MediaSearchDropdown({ label, onClick }: IMediaDropdownSearchProp
     };
 
     return (
-        <>
+        <div>
             <TextField
                 id="MediaInputDropdown"
                 label={label}
@@ -26,8 +26,13 @@ export function MediaSearchDropdown({ label, onClick }: IMediaDropdownSearchProp
                 onChange={handleChange}
                 fullWidth
             />
-
+            {/*
+            MediaDropdown style to apply:
+                position: fixed;
+                width: 100%;
+                z-index: 2;
+            */}
             <MediaDropdown mediaSearch={result} showAnimes onClick={onClick}/>
-        </>
+        </div>
     )
 }
