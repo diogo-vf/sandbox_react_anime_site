@@ -583,7 +583,7 @@ export interface IMediaPage{
 export interface JSONArray extends Array<JSONValue> { }
 
 export interface JSONObject {
-    [x?: null | string]: JSONValue;
+    [x: string]: JSONValue;
 }
 
 export type JSONValue = string
