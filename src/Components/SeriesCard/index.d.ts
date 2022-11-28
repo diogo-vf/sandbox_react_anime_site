@@ -13,4 +13,5 @@ export interface IDivProps extends IProps{
 export interface ISeriesCardProps extends IProps {
     image_src: string;
     title: string;
+    style?: React.CSSProperties;
 }

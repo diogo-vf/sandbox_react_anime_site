@@ -3,6 +3,11 @@ import {Theme} from "@mui/material";
 
 export const DivResultsContainer = styled.div<{ theme: Theme }>`
   background: ${({theme}) => theme.palette.mode ==="dark" ?  `rgb(23, 25, 26)` : `rgb(176, 179, 189)`};
+  position: absolute;
+  top: 56px;
+  width: 100%;
+  height: 300px;
+  overflow: hidden scroll; 
   border-radius: 4px;
   cursor: pointer;
   font-size: 1.5rem;

@@ -4,9 +4,9 @@ import { ISeriesCardProps } from ".";
 
 
 
-function SeriesCard({image_src, title, color, width, height, opened = false}: ISeriesCardProps) {
+function SeriesCard({image_src, title, color, width, height, opened = false, style}: ISeriesCardProps) {
     return (
-        <StyledCard>
+        <StyledCard style={style}>
             <Tooltip title={title} placement="top" arrow followCursor enterDelay={600} enterNextDelay={300}>
                 <StyledCover src={image_src} width={`${width}px`} height={`${height}px`}/>
             </Tooltip>
