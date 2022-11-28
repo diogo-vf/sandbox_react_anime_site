@@ -23,8 +23,9 @@ function SeriesForm() {
                     height={300}
                     opened
                     style={{
-                        flex: "0 0 20%"
-                }}
+                        flex: "0 0 20%",
+                        cursor: "default",
+                    }}
                 />
                 <div style={{
                     marginTop: "4rem",
@@ -33,8 +34,9 @@ function SeriesForm() {
                     width: "100%",
                     justifyContent: "space-between",
                     flexDirection: "column",
+                    marginBottom: "3rem",
                 }}>
-                    <MediaSearchDropdown label="Search Anime" onClick={handleClick} style={{borderRadius:4}}/>
+                    <MediaSearchDropdown label="Search Anime" onClick={handleClick} style={{borderRadius: 4}}/>
                     <div>{description}</div>
 
                 </div>
