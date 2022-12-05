@@ -6,7 +6,7 @@ import {IMediaDropdownSearchProps} from "./index.MediaSearchDropdown";
 import {MediaDropdown} from "./MediaDropdown";
 import {IMedia} from "../../anilist";
 
-export function MediaSearchDropdown({label, onClick, style}: IMediaDropdownSearchProps) {
+export function MediaSearchDropdown({label, showMangas = false, showAnimes=false, onClick, style}: IMediaDropdownSearchProps) {
     const [result, setResult] = useState<IMediaSearch | undefined>()
     const [displayDropdown, setDisplayDropdown] = useState<boolean>(false)
     const [searchContent, setSeachContent] = useState("")
@@ -47,7 +47,7 @@ export function MediaSearchDropdown({label, onClick, style}: IMediaDropdownSearc
                 }}
                 fullWidth
             />
-            {displayDropdown && <MediaDropdown mediaSearch={result} showAnimes onClick={handleClick}/>}
+            {displayDropdown && <MediaDropdown mediaSearch={result} showAnimes={showAnimes} showMangas={showMangas} onClick={handleClick}/>}
         </div>
     )
 }
